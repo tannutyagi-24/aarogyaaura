@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AarogyaAura – Yoga for Healing & Wellness</title>
+  <meta name="description" content="AarogyaAura is a holistic yoga, fitness, and wellness platform offering healing routines, BMI tools, and awareness for PCOS, diabetes, thyroid, anxiety, and more." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">🧘 Aarogya<span>Aura</span></a>
+      <button id="menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#conditions">Health & Yoga</a></li>
+        <li><a href="#routine-gen">Routine</a></li>
+        <li><a href="#bmi">BMI</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#testimonials">Stories</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <section id="hero">
+    <div class="hero-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tag">🌿 Yoga · Fitness · Wellness</p>
+      <h1>Heal Naturally.<br/><em>Live Mindfully.</em></h1>
+      <p class="hero-sub">Discover the ancient science of yoga to manage PCOS, diabetes, thyroid, anxiety, and more — one breath at a time.</p>
+      <a href="#conditions" class="btn btn-primary">Start Your Healing Journey</a>
+    </div>
+    <div class="hero-silhouette">
+      <svg viewBox="0 0 200 300" class="yoga-svg" aria-hidden="true">
+        <circle cx="100" cy="40" r="18" fill="currentColor" opacity="0.25"/>
+        <line x1="100" y1="58" x2="100" y2="150" stroke="currentColor" stroke-width="4" opacity="0.25"/>
+        <line x1="100" y1="90" x2="60" y2="60" stroke="currentColor" stroke-width="4" opacity="0.25"/>
+        <line x1="100" y1="90" x2="140" y2="55" stroke="currentColor" stroke-width="4" opacity="0.25"/>
+        <line x1="100" y1="150" x2="65" y2="210" stroke="currentColor" stroke-width="4" opacity="0.25"/>
+        <line x1="100" y1="150" x2="135" y2="210" stroke="currentColor" stroke-width="4" opacity="0.25"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT SECTION ===================== -->
+  <section id="about" class="section">
+    <div class="container fade-in">
+      <h2 class="section-title">Why Yoga & Holistic Wellness?</h2>
+      <p class="section-subtitle">Your body is powerful. Sometimes it just needs the right stretch and a little patience.</p>
+      <div class="about-grid">
+        <div class="about-card glass-card">
+          <div class="about-icon">🧠</div>
+          <h3>Mind</h3>
+          <p>Yoga calms your nervous system, reduces cortisol, and brings mental clarity. Just 15 minutes of pranayama can reset your entire day.</p>
+        </div>
+        <div class="about-card glass-card">
+          <div class="about-icon">💪</div>
+          <h3>Body</h3>
+          <p>From improved flexibility to balanced hormones, yoga works gently but powerfully on every system — digestive, endocrine, and immune.</p>
+        </div>
+        <div class="about-card glass-card">
+          <div class="about-icon">💚</div>
+          <h3>Spirit</h3>
+          <p>Holistic health is about aligning your lifestyle with nature. Eat clean, move daily, breathe deeply, and rest well.</p>
+        </div>
+      </div>
+      <div class="benefits-strip">
+        <span>✔ Reduces Stress</span>
+        <span>✔ Balances Hormones</span>
+        <span>✔ Improves Sleep</span>
+        <span>✔ Boosts Immunity</span>
+        <span>✔ Increases Energy</span>
+        <span>✔ Enhances Focus</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HEALTH CONDITIONS ===================== -->
+  <section id="conditions" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title fade-in">Health Conditions & Yoga Solutions</h2>
+      <p class="section-subtitle fade-in">Yoga isn't a replacement for medicine — it's the best companion. Explore condition-specific routines designed to support your healing journey.</p>
+
+      <div class="conditions-grid" id="conditions-grid">
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ROUTINE GENERATOR ===================== -->
+  <section id="routine-gen" class="section">
+    <div class="container fade-in">
+      <h2 class="section-title">Daily Yoga Routine Generator</h2>
+      <p class="section-subtitle">Don't know where to start? Let us pick the perfect routine for you today. 🌸</p>
+      <div class="routine-box glass-card">
+        <button class="btn btn-primary" id="generate-routine-btn">✨ Generate My Routine</button>
+        <div id="routine-result" class="routine-result hidden">
+          <h3 id="routine-heading">Your Personalized Routine</h3>
+          <div id="routine-poses"></div>
+          <p id="routine-quote" class="routine-quote"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BMI CALCULATOR ===================== -->
+  <section id="bmi" class="section section-alt">
+    <div class="container fade-in">
+      <h2 class="section-title">BMI Calculator</h2>
+      <p class="section-subtitle">A quick health check-in. Know your number, plan your practice. 🧮</p>
+      <div class="bmi-box glass-card">
+        <div class="bmi-inputs">
+          <div class="input-group">
+            <label for="bmi-height">Height (cm)</label>
+            <input type="number" id="bmi-height" placeholder="e.g. 165" min="50" max="300" />
+          </div>
+          <div class="input-group">
+            <label for="bmi-weight">Weight (kg)</label>
+            <input type="number" id="bmi-weight" placeholder="e.g. 60" min="10" max="500" />
+          </div>
+          <button class="btn btn-primary" id="calc-bmi-btn">Calculate BMI</button>
+        </div>
+        <div id="bmi-result" class="bmi-result hidden">
+          <div id="bmi-value" class="bmi-value"></div>
+          <p id="bmi-category"></p>
+          <p id="bmi-suggestion"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BLOG SECTION ===================== -->
+  <section id="blog" class="section">
+    <div class="container">
+      <h2 class="section-title fade-in">Wellness Blog</h2>
+      <p class="section-subtitle fade-in">Read, learn, and take charge of your health one post at a time.</p>
+      <div class="blog-grid fade-in">
+        <article class="blog-card glass-card">
+          <div class="blog-img" style="background: linear-gradient(135deg, #7FB77E, #B7E4C7);"></div>
+          <div class="blog-body">
+            <span class="blog-tag">PCOS</span>
+            <h3>Managing PCOS Naturally</h3>
+            <p>PCOS affects 1 in 10 women. Discover how diet, yoga, and lifestyle shifts can help balance hormones and reduce symptoms — without just relying on pills.</p>
+            <a href="#" class="blog-link">Read more →</a>
+          </div>
+        </article>
+        <article class="blog-card glass-card">
+          <div class="blog-img" style="background: linear-gradient(135deg, #C8A2C8, #E8D5E8);"></div>
+          <div class="blog-body">
+            <span class="blog-tag">Hormones</span>
+            <h3>Yoga for Hormonal Balance</h3>
+            <p>Your endocrine system thrives on gentle movement. Learn which asanas target the thyroid, adrenals, and reproductive hormones for a harmonious body.</p>
+            <a href="#" class="blog-link">Read more →</a>
+          </div>
+        </article>
+        <article class="blog-card glass-card">
+          <div class="blog-img" style="background: linear-gradient(135deg, #F5D7A1, #F5F5DC);"></div>
+          <div class="blog-body">
+            <span class="blog-tag">Diabetes</span>
+            <h3>Preventing Diabetes with Lifestyle Changes</h3>
+            <p>Pre-diabetes is reversible. Small daily rituals — morning walks, pranayama, and mindful eating — can bring your blood sugar back into a healthy range.</p>
+            <a href="#" class="blog-link">Read more →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section id="testimonials" class="section section-alt">
+    <div class="container fade-in">
+      <h2 class="section-title">Real Stories, Real Healing</h2>
+      <p class="section-subtitle">Hear from women who transformed their lives with yoga and wellness.</p>
+      <div class="testimonial-slider" id="testimonial-slider">
+        <div class="testimonial-track" id="testimonial-track">
+          <div class="testimonial-card glass-card">
+            <p class="testimonial-text">"I was diagnosed with PCOS at 22. Doctors said I'd need medication for years. I started yoga 6 months ago and my latest scans are clear. I still can't believe it."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background:#7FB77E;">A</div>
+              <div><strong>Ananya Sharma</strong><br/><small>Healed from PCOS symptoms</small></div>
+            </div>
+          </div>
+          <div class="testimonial-card glass-card">
+            <p class="testimonial-text">"My thyroid levels normalized after 4 months of daily Sarvangasana and Halasana. My energy is back, my hair stopped falling, and I feel alive again."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background:#C8A2C8;">P</div>
+              <div><strong>Priya Mehta</strong><br/><small>Thyroid management with yoga</small></div>
+            </div>
+          </div>
+          <div class="testimonial-card glass-card">
+            <p class="testimonial-text">"I was pre-diabetic and terrified. My yoga teacher introduced me to Surya Namaskar and breathing exercises. In 3 months, my HbA1c dropped from 6.3 to 5.6!"</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background:#F5D7A1;">R</div>
+              <div><strong>Ritu Kapoor</strong><br/><small>Reversed pre-diabetes</small></div>
+            </div>
+          </div>
+          <div class="testimonial-card glass-card">
+            <p class="testimonial-text">"Anxiety made my life hell. Panic attacks, sleepless nights. Yoga Nidra and Anulom Vilom changed everything. I sleep like a baby now and wake up calm."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background:#A2D2FF;">S</div>
+              <div><strong>Sneha Iyer</strong><br/><small>Manages anxiety through yoga</small></div>
+            </div>
+          </div>
+          <div class="testimonial-card glass-card">
+            <p class="testimonial-text">"I lost 12 kg in 6 months — no crash diets, no gym. Just consistent yoga, clean eating, and self-love. AarogyaAura's routines kept me motivated every single day."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background:#FFB7B2;">M</div>
+              <div><strong>Meera Joshi</strong><br/><small>Weight management success</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button id="slider-prev" aria-label="Previous testimonial">❮</button>
+          <div class="slider-dots" id="slider-dots"></div>
+          <button id="slider-next" aria-label="Next testimonial">❯</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="section">
+    <div class="container fade-in">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-subtitle">Have questions? Want personalized guidance? We'd love to hear from you. 💌</p>
+      <form id="contact-form" class="contact-form glass-card" novalidate>
+        <div class="input-group">
+          <label for="contact-name">Your Name</label>
+          <input type="text" id="contact-name" placeholder="e.g. Priya" required />
+          <span class="error-msg" id="name-error"></span>
+        </div>
+        <div class="input-group">
+          <label for="contact-email">Email Address</label>
+          <input type="email" id="contact-email" placeholder="e.g. priya@email.com" required />
+          <span class="error-msg" id="email-error"></span>
+        </div>
+        <div class="input-group">
+          <label for="contact-message">Your Message</label>
+          <textarea id="contact-message" rows="5" placeholder="Tell us how we can help…" required></textarea>
+          <span class="error-msg" id="message-error"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p id="form-success" class="form-success hidden">✅ Thank you! We'll get back to you soon.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <h3>🧘 Aarogya<span>Aura</span></h3>
+          <p>Empowering you with yoga-based solutions for modern lifestyle disorders. Heal naturally, live mindfully.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#conditions">Health & Yoga</a></li>
+            <li><a href="#routine-gen">Routine Generator</a></li>
+            <li><a href="#bmi">BMI Calculator</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram" class="social-icon">📸</a>
+            <a href="#" aria-label="YouTube" class="social-icon">▶️</a>
+            <a href="#" aria-label="Twitter" class="social-icon">🐦</a>
+            <a href="#" aria-label="Facebook" class="social-icon">📘</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AarogyaAura. Made with 💚 for your wellness.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- ===================== MODAL ===================== -->
+  <div id="routine-modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal-content glass-card">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+      <h2 id="modal-title"></h2>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
