@@ -451,4 +451,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // ========== FLOATING CHATBOT WIDGET ==========
+
+  const chatbotToggle = document.getElementById('chatbot-toggle');
+  const chatbotPanel = document.getElementById('chatbot-panel');
+  const chatbotClose = document.getElementById('chatbot-close');
+  const chatbotBody = document.getElementById('chatbot-body');
+  const chatbotBadge = document.getElementById('chatbot-badge');
+  const chatbotIconOpen = chatbotToggle.querySelector('.chatbot-icon-open');
+  const chatbotIconClose = chatbotToggle.querySelector('.chatbot-icon-close');
+  let chatbotLoaded = false;
+
+  function toggleChatbot() {
+    const isOpen = !chatbotPanel.classList.contains('hidden');
+    if (isOpen) {
+      chatbotPanel.classList.add('hidden');
+      chatbotIconOpen.classList.remove('hidden');
+      chatbotIconClose.classList.add('hidden');
+    } else {
+      chatbotPanel.classList.remove('hidden');
+      chatbotIconOpen.classList.add('hidden');
+      chatbotIconClose.classList.remove('hidden');
+      // Hide badge on first open
+      if (chatbotBadge) chatbotBadge.style.display = 'none';
+      // Lazy-load iframe on first open
+      if (!chatbotLoaded) {
+        chatbotBody.innerHTML = `<iframe
+          src="https://www.chatbase.co/chatbot-iframe/-o3dyxRzmGFOY89ggEZAG"
+          width="100%"
+          style="height: 100%; min-height: 400px"
+          frameborder="0"
+          allow="microphone"
+        ></iframe>`;
+        chatbotLoaded = true;
+      }
+    }
+  }
+
+  chatbotToggle.addEventListener('click', toggleChatbot);
+  chatbotClose.addEventListener('click', () => {
+    chatbotPanel.classList.add('hidden');
+    chatbotIconOpen.classList.remove('hidden');
+    chatbotIconClose.classList.add('hidden');
+  });
+
+  // Close chatbot on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !chatbotPanel.classList.contains('hidden')) {
+      chatbotPanel.classList.add('hidden');
+      chatbotIconOpen.classList.remove('hidden');
+      chatbotIconClose.classList.add('hidden');
+    }
+  });
+
 }); // end DOMContentLoaded

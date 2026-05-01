@@ -301,6 +301,24 @@
     </div>
   </footer>
 
+  <!-- ===================== FLOATING CHATBOT ===================== -->
+  <div id="chatbot-widget">
+    <div id="chatbot-panel" class="chatbot-panel hidden">
+      <div class="chatbot-header">
+        <span class="chatbot-header-title">🧘 AarogyaAura AI</span>
+        <button id="chatbot-close" class="chatbot-close-btn" aria-label="Close chat">&times;</button>
+      </div>
+      <div class="chatbot-body" id="chatbot-body">
+        <!-- iframe loaded lazily -->
+      </div>
+    </div>
+    <button id="chatbot-toggle" class="chatbot-toggle" aria-label="Open chat">
+      <span class="chatbot-icon-open">💬</span>
+      <span class="chatbot-icon-close hidden">✕</span>
+      <span class="chatbot-badge" id="chatbot-badge">1</span>
+    </button>
+  </div>
+
   <!-- Back to Top -->
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
